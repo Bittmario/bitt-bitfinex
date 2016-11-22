@@ -38,10 +38,12 @@ function getTickerData(currency){
 
       var askPrice = parseFloat(result.ask);
       var bidPrice = parseFloat(result.bid);
+      var midPrice = parseFloat(result.mid);
 
       if(currency.toLowerCase() === 'bbd'){
         askPrice = askPrice * 2;
         bidPrice = bidPrice * 2;
+        midPrice = midPrice * 2;
       }
 
       if(isNaN(askPrice) || isNaN(bidPrice)){
@@ -50,6 +52,7 @@ function getTickerData(currency){
 
       prices[currency.toUpperCase()]= {
         currency: currency.toUpperCase(),
+        rate: midPrice,
         rates: {
           ask: askPrice,
           bid: bidPrice,
@@ -76,7 +79,6 @@ exports.ticker = function ticker(currency, callback) {
   var tickerCurrency = currency;
 
   if(typeof currency === 'object'){
-    console.log('currency is an object');
     tickerCurrency = currency[0] || '';
   }
 
@@ -90,10 +92,10 @@ exports.ticker = function ticker(currency, callback) {
   });
 };
 
-// exports.ticker(['BBD'], function(err, res){
-//   if(err != null)
-//     return console.log('The error is ', err);
-//   else {
-//     console.log('The result is ', res);
-//   }
-// })
+exports.ticker('BBD', function(err, res){
+  if(err != null)
+    return console.log('The error is ', err);
+  else {
+    console.log('The result is ', res);
+  }
+})
