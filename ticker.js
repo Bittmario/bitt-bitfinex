@@ -12,8 +12,6 @@ function getTickerData(currency){
     superagent
     .get(API_ENDPOINT + symbol)
     .end(function(err, res){
-      // console.log((err['response'].body) && (err['response'].body).message || 'Internal server error');
-      //console.log(res.body);
       if(err){
         if(res.body.message){
           console.log('getTickerData error occurred; '+ res.body.message);
@@ -28,15 +26,28 @@ function getTickerData(currency){
 
       if(!result){
         //console.log(result);
-        return reject('Res.body is empty');
+        return reject('Result is empty');
       }
 
       var prices = {};
+
+      var askPrice = parseFloat(result.ask);
+      var bidPrice = parseFloat(result.bid);
+
+      if(currency.toLowerCase() === 'bbd'){
+        askPrice = askPrice * 2;
+        bidPrice = bidPrice * 2;
+      }
+
+      if(isNaN(askPrice) || isNaN(bidPrice)){
+        return reject('Conversion error');
+      }
+
       prices[currency.toUpperCase()]= {
         currency: currency.toUpperCase(),
         rates: {
-          ask: result.ask,
-          bid: result.bid,
+          ask: askPrice,
+          bid: bidPrice,
         }
       };
 
