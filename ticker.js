@@ -72,7 +72,7 @@ function getBitfinexSymbol(currency){
   }
 }
 
-exports.ticker = function(currency, callback) {
+exports.ticker = function ticker(currency, callback) {
   var tickerCurrency = currency;
 
   if(typeof currency === 'object'){
