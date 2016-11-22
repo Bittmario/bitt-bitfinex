@@ -91,11 +91,3 @@ exports.ticker = function ticker(currency, callback) {
     callback(error);
   });
 };
-
-exports.ticker('BBD', function(err, res){
-  if(err != null)
-    return console.log('The error is ', err);
-  else {
-    console.log('The result is ', res);
-  }
-})
