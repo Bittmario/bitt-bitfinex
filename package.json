@@ -1,0 +1,28 @@
+{
+  "name": "bitt-lamassu-bitfinex",
+  "version": "0.1.0",
+  "description": "Bitt's implementation of a Lamassu ATM ticker for Bitfinex",
+  "main": "ticker.js",
+  "dependencies": {
+    "promise": "^7.1.1",
+    "jasmine": "^2.5.2",
+    "superagent": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bittmario/bitt-lamassu-bitfinex.git"
+  },
+  "keywords": [
+    "Bitt"
+  ],
+  "author": "Bittmario",
+  "license": "\tGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Bittmario/bitt-lamassu-bitfinex/issues"
+  },
+  "homepage": "https://github.com/Bittmario/bitt-lamassu-bitfinex#readme"
+}
