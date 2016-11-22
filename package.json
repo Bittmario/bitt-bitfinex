@@ -5,6 +5,7 @@
   "main": "ticker.js",
   "dependencies": {
     "jasmine": "^2.5.2",
+    "lodash": "^4.17.2",
     "promise": "^7.1.1",
     "superagent": "^3.0.0"
   },

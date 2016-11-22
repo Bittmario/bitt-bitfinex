@@ -1,5 +1,6 @@
 var superagent = require('superagent');
 var Promise = require('promise');
+var _ = require('lodash');
 exports.NAME = 'Bitfinex';
 exports.SUPPORTED_MODULES = ['ticker'];
 
