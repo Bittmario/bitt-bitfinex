@@ -5,6 +5,11 @@ exports.SUPPORTED_MODULES = ['ticker'];
 
 var API_ENDPOINT = 'https://api.bitfinex.com/v1/pubticker/';
 
+var pluginConfig = {};
+exports.config = function(localConfig){
+  if(localConfig) _.merge(pluginConfig, localConfig);
+}
+
 function getTickerData(currency){
   return new Promise(function(resolve, reject){
 
