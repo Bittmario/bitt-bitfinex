@@ -4,9 +4,9 @@
   "description": "Bitt's implementation of a Lamassu ATM ticker for Bitfinex",
   "main": "ticker.js",
   "dependencies": {
-    "superagent": "^3.0.0",
     "jasmine": "^2.5.2",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "superagent": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {

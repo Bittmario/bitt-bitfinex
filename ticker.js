@@ -73,15 +73,27 @@ function getBitfinexSymbol(currency){
 }
 
 exports.ticker = function ticker(currency, callback) {
-  if(typeof currency !== 'string')
-    return callback('Please send one currency');
+  var tickerCurrency = currency;
 
-  if(!currency)
+  if(typeof currency === 'object'){
+    console.log('currency is an object');
+    tickerCurrency = currency[0] || '';
+  }
+
+  if(!tickerCurrency)
     return callback('Currency not specified');
 
-  getTickerData(currency).then(function(result){
+  getTickerData(tickerCurrency).then(function(result){
     callback(null, result);
   }, function(error){
     callback(error);
   });
 };
+
+exports.ticker(['BBD'], function(err, res){
+  if(err != null)
+    return console.log('The error is ', err);
+  else {
+    console.log('The result is ', res);
+  }
+})
