@@ -72,7 +72,7 @@ function getBitfinexSymbol(currency){
   }
 }
 
-exports.ticker = function ticker(currency, callback) {
+exports.ticker = function(currency, callback) {
   var tickerCurrency = currency;
 
   if(typeof currency === 'object'){
@@ -90,10 +90,10 @@ exports.ticker = function ticker(currency, callback) {
   });
 };
 
-exports.ticker(['BBD'], function(err, res){
-  if(err != null)
-    return console.log('The error is ', err);
-  else {
-    console.log('The result is ', res);
-  }
-})
+// exports.ticker(['BBD'], function(err, res){
+//   if(err != null)
+//     return console.log('The error is ', err);
+//   else {
+//     console.log('The result is ', res);
+//   }
+// })
